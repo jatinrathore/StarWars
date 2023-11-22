@@ -1,0 +1,13 @@
+.list-item {
+  padding: 9px;
+  border-radius: 5px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: #f9fafd4d;
+}
