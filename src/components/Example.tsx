@@ -1,6 +1,4 @@
-import React from "react";
-import useFilms from "../hooks/useFilms";
-import usePeople from "../hooks/usePeoples";
+import Switch from "../components/Switch/Switch";
 import useSpecies from "../hooks/useSpecies";
 
 const Example = () => {
@@ -8,9 +6,7 @@ const Example = () => {
 
   return (
     <div>
-      {data?.results.map((f, index) => (
-        <li key={index}>{f.name}</li>
-      ))}
+      <Switch />
     </div>
   );
 };

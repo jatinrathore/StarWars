@@ -20,17 +20,17 @@ const FilmAccordionItem = () => {
   return (
     <>
       <h2>
-        {/* <Link to="https://www.facebook.com/"> */}
-        <AccordionButton
-          _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
-        >
-          <HStack as="span" flex="1" textAlign="left">
-            <PiFilmReel />
-            <Text>Film</Text>
-          </HStack>
-          <AccordionIcon />
-        </AccordionButton>
-        {/* </Link> */}
+        <Link to="/jk">
+          <AccordionButton
+            _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
+          >
+            <HStack as="span" flex="1" textAlign="left">
+              <PiFilmReel />
+              <Text>Film</Text>
+            </HStack>
+            <AccordionIcon />
+          </AccordionButton>
+        </Link>
       </h2>
       <AccordionPanel>
         {isLoading && <SkeletonList />}

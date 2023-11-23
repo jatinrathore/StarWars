@@ -1,0 +1,32 @@
+.switch-container {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch-slider {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left 0.3s;
+}
+
+.switch-container.on {
+  background-color: #4caf50;
+}
+
+.switch-container.off {
+  background-color: #ccc;
+}
+
+.switch-container.on .switch-slider {
+  left: 30px;
+}
