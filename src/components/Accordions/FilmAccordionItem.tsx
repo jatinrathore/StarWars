@@ -4,7 +4,6 @@ import {
   AccordionIcon,
   AccordionPanel,
   Text,
-  Spinner,
   List,
   ListItem,
 } from "@chakra-ui/react";
@@ -13,6 +12,7 @@ import useFilms from "../../hooks/useFilms";
 import "./Accordions.css";
 import ListHeading from "./ListHeading";
 import SkeletonList from "./SkeletonList";
+import { Link } from "react-router-dom";
 
 const FilmAccordionItem = () => {
   const { data, isLoading } = useFilms();
@@ -20,6 +20,7 @@ const FilmAccordionItem = () => {
   return (
     <>
       <h2>
+        {/* <Link to="https://www.facebook.com/"> */}
         <AccordionButton
           _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
         >
@@ -29,6 +30,7 @@ const FilmAccordionItem = () => {
           </HStack>
           <AccordionIcon />
         </AccordionButton>
+        {/* </Link> */}
       </h2>
       <AccordionPanel>
         {isLoading && <SkeletonList />}

@@ -1,6 +1,6 @@
 import { Card, CardBody, Heading, Image, Text } from "@chakra-ui/react";
 import homeLogo from "../assets/star-wars-movie-lucasfilm-disney-worries.webp";
-const HomePage = () => {
+const Dashboard = () => {
   return (
     <div>
       <Card maxW="70dvw" marginY="50" marginX="auto">
@@ -18,4 +18,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Dashboard;

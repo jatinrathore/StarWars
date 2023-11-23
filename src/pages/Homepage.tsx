@@ -1,17 +1,17 @@
-import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
-import "./App.css";
-import NavBar from "./components/NavBar";
-import SelectGroup from "./components/SelectGroup";
-import HomePage from "./components/HomePage";
+import { Grid, GridItem, Show, Box } from "@chakra-ui/react";
+import Dashboard from "../components/Dashboard";
+import SelectGroup from "../components/SelectGroup";
+import NavBar from "../components/NavBar";
+import { Outlet } from "react-router-dom";
 
-function App() {
+const Homepage = () => {
   return (
     <Grid
       templateAreas={{
         base: `"nav"
-               "main"`,
+                   "main"`,
         lg: `"nav nav" 
-             "aside main"`,
+                 "aside main"`,
       }}
       templateColumns={{
         base: "1fr",
@@ -28,11 +28,11 @@ function App() {
       </Show>
       <GridItem area="main">
         <Box>
-          <HomePage />
+          <Outlet />
         </Box>
       </GridItem>
     </Grid>
   );
-}
+};
 
-export default App;
+export default Homepage;
