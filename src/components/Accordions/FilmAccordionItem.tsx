@@ -20,7 +20,7 @@ const FilmAccordionItem = () => {
   return (
     <>
       <h2>
-        <Link to="/jk">
+        <Link to="/frame">
           <AccordionButton
             _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
           >

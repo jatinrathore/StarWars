@@ -11,6 +11,7 @@ import { LuRocket } from "react-icons/lu";
 import useStarships from "../../hooks/useStarships";
 import ListHeading from "./ListHeading";
 import SkeletonList from "./SkeletonList";
+import { Link } from "react-router-dom";
 
 const StarShipAccordionItem = () => {
   const { data, isLoading } = useStarships();
@@ -18,15 +19,17 @@ const StarShipAccordionItem = () => {
   return (
     <>
       <h2>
-        <AccordionButton
-          _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
-        >
-          <HStack as="span" flex="1" textAlign="left">
-            <LuRocket />
-            <Text>Starships</Text>
-          </HStack>
-          <AccordionIcon />
-        </AccordionButton>
+        <Link to="/frame">
+          <AccordionButton
+            _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
+          >
+            <HStack as="span" flex="1" textAlign="left">
+              <LuRocket />
+              <Text>Starships</Text>
+            </HStack>
+            <AccordionIcon />
+          </AccordionButton>
+        </Link>
       </h2>
       <AccordionPanel pb={4}>
         {isLoading && <SkeletonList />}

@@ -1,8 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Dashboard from "./components/Dashboard";
-import Example from "./components/Example";
-import GridListSwitch from "./components/Switch/GridListSwitch";
+import FramesPage from "./pages/FramesPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,11 +9,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <GridListSwitch />,
+        element: <Dashboard />,
       },
       {
-        path: "/jk",
-        element: <Example />,
+        path: "/frame",
+        element: <FramesPage />,
       },
     ],
   },

@@ -9,24 +9,26 @@ import {
 } from "@chakra-ui/react";
 import { LuUsers2 } from "react-icons/lu";
 import usePeoples from "../../hooks/usePeoples";
-import { PiFilmReel } from "react-icons/pi";
 import ListHeading from "./ListHeading";
 import SkeletonList from "./SkeletonList";
+import { Link } from "react-router-dom";
 
 const PeopleAccordionItem = () => {
   const { data, isLoading } = usePeoples();
   return (
     <>
       <h2>
-        <AccordionButton
-          _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
-        >
-          <HStack as="span" flex="1" textAlign="left">
-            <LuUsers2 />
-            <Text>People</Text>
-          </HStack>
-          <AccordionIcon />
-        </AccordionButton>
+        <Link to="/frame">
+          <AccordionButton
+            _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
+          >
+            <HStack as="span" flex="1" textAlign="left">
+              <LuUsers2 />
+              <Text>People</Text>
+            </HStack>
+            <AccordionIcon />
+          </AccordionButton>
+        </Link>
       </h2>
       <AccordionPanel pb={4}>
         {isLoading && <SkeletonList />}
