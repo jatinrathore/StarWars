@@ -5,7 +5,8 @@ import FilmCard from "../Cards/FilmCard";
 import SkeletonCard from "../Cards/SkeletonCard";
 import GridListSwitch from "../Switch/GridListSwitch";
 import usePlanets from "../../hooks/usePlanets";
-import PlanetList from "../Lists/planetList";
+import PlanetList from "../Lists/PlanetList";
+import planetCardImg from "../../assets/planets.webp";
 
 const PlanetFrame = () => {
   const { data, isLoading } = usePlanets();
@@ -19,7 +20,7 @@ const PlanetFrame = () => {
           Planets
         </Text>
         <GridListSwitch
-          gridActive={false}
+          gridActive={true}
           onGridChange={(isGrid) => setGrid(isGrid)}
         />
       </HStack>
@@ -34,6 +35,7 @@ const PlanetFrame = () => {
             <FilmCard
               title={planet.name}
               children={<PiPlanetBold className="card--icon" />}
+              cardImg={planetCardImg}
               key={index}
             />
           ))}

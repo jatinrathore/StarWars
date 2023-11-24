@@ -7,8 +7,9 @@ import { ReactNode } from "react";
 interface Props {
   title: string;
   children: ReactNode;
+  cardImg: string;
 }
-const FilmCard = ({ title, children }: Props) => {
+const FilmCard = ({ title, children, cardImg }: Props) => {
   return (
     <>
       <div>

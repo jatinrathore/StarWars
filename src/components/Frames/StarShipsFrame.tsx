@@ -3,10 +3,10 @@ import { useState } from "react";
 import { LuRocket } from "react-icons/lu";
 import FilmCard from "../Cards/FilmCard";
 import SkeletonCard from "../Cards/SkeletonCard";
-import SpeciesList from "../Lists/SpeciesList";
 import GridListSwitch from "../Switch/GridListSwitch";
 import useStarships from "../../hooks/useStarships";
 import StarShipsList from "../Lists/StarShipsList";
+import starshipCardImg from "../../assets/starwarsships.webp";
 
 const StarShipsFrame = () => {
   const { data, isLoading } = useStarships();
@@ -20,7 +20,7 @@ const StarShipsFrame = () => {
           Starships
         </Text>
         <GridListSwitch
-          gridActive={false}
+          gridActive={true}
           onGridChange={(isGrid) => setGrid(isGrid)}
         />
       </HStack>
@@ -35,6 +35,7 @@ const StarShipsFrame = () => {
             <FilmCard
               title={planet.name}
               children={<LuRocket className="card--icon" />}
+              cardImg={starshipCardImg}
               key={index}
             />
           ))}

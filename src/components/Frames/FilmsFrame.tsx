@@ -6,6 +6,7 @@ import { useState } from "react";
 import FilmsList from "../Lists/FilmsList";
 import { PiFilmReel } from "react-icons/pi";
 import GridListSwitch from "../Switch/GridListSwitch";
+import FilmCardImg from "../../assets/536696.jpg";
 
 const FilmsFrame = () => {
   const { data, isLoading } = useFilms();
@@ -34,6 +35,7 @@ const FilmsFrame = () => {
             <FilmCard
               title={film.title}
               children={<PiFilmReel className="card--icon" />}
+              cardImg={FilmCardImg}
               key={index}
             />
           ))}

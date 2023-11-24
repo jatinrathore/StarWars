@@ -3,10 +3,10 @@ import { useState } from "react";
 import { PiAlien } from "react-icons/pi";
 import FilmCard from "../Cards/FilmCard";
 import SkeletonCard from "../Cards/SkeletonCard";
-import PlanetList from "../Lists/planetList";
 import GridListSwitch from "../Switch/GridListSwitch";
 import useSpecies from "../../hooks/useSpecies";
 import SpeciesList from "../Lists/SpeciesList";
+import speciesCardImg from "../../assets/star-wars-alien-species.webp";
 
 const SpeciesFrame = () => {
   const { data, isLoading } = useSpecies();
@@ -35,6 +35,7 @@ const SpeciesFrame = () => {
             <FilmCard
               title={planet.name}
               children={<PiAlien className="card--icon" />}
+              cardImg={speciesCardImg}
               key={index}
             />
           ))}

@@ -3,10 +3,10 @@ import { useState } from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
 import FilmCard from "../Cards/FilmCard";
 import SkeletonCard from "../Cards/SkeletonCard";
-import StarShipsList from "../Lists/StarShipsList";
 import GridListSwitch from "../Switch/GridListSwitch";
 import useVehicles from "../../hooks/useVehicles";
 import VehiclesList from "../Lists/VehiclesList";
+import vehicleCardImg from "../../assets/vehicles.jpg";
 
 const VehiclesFrame = () => {
   const { data, isLoading } = useVehicles();
@@ -35,6 +35,7 @@ const VehiclesFrame = () => {
             <FilmCard
               title={planet.name}
               children={<LiaCarSideSolid className="card--icon" />}
+              cardImg={vehicleCardImg}
               key={index}
             />
           ))}
