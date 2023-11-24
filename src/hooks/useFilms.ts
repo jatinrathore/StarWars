@@ -4,6 +4,7 @@ import APIClient from "../services/api-client";
 export interface Films {
   title: string;
   release_date: string;
+  director: string;
 }
 
 const apiClient = new APIClient<Films>("films");

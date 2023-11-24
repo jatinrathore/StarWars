@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./GridListSwitch.css";
 import { HiOutlineViewList } from "react-icons/hi";
 import { BsFillGridFill } from "react-icons/bs";
 
-const GridListSwitch = () => {
-  const [isGrid, setGrid] = useState(true);
+interface Props {
+  gridActive: boolean;
+  onGridChange: (isGrid: boolean) => void;
+}
+
+const GridListSwitch = ({ gridActive, onGridChange }: Props) => {
+  const [isGrid, setGrid] = useState(gridActive);
+
+  useEffect(() => {
+    onGridChange(isGrid);
+  }, [isGrid, onGridChange]);
 
   const handleClickGrid = () => {
     if (isGrid) return;
-
     setGrid(!isGrid);
   };
 

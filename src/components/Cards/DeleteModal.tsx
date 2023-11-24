@@ -26,7 +26,7 @@ const DeleteModal = ({ title }: { title: string }) => {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg="white" color="black">
+        <ModalContent bg="white" color="black" mt="200px">
           <ModalHeader>
             <GrCircleAlert color="red" fontSize={25} />
           </ModalHeader>

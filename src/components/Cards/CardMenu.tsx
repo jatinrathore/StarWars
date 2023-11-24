@@ -1,18 +1,10 @@
-import {
-  Menu,
-  MenuButton,
-  Button,
-  MenuList,
-  MenuItem,
-  Text,
-} from "@chakra-ui/react";
+import { Menu, MenuButton, Button, MenuList, MenuItem } from "@chakra-ui/react";
 import { GrView } from "react-icons/gr";
 import { LuDownload } from "react-icons/lu";
 import { PiPencilSimple } from "react-icons/pi";
 import { LuShare2 } from "react-icons/lu";
 import { PiFolders } from "react-icons/pi";
 import { RxLockClosed } from "react-icons/rx";
-import { RiDeleteBinLine } from "react-icons/ri";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import CardMenuItem from "./CardMenuItem";
 import DeleteModal from "./DeleteModal";
@@ -20,7 +12,7 @@ import DeleteModal from "./DeleteModal";
 const CardMenu = ({ title }: { title: string }) => {
   return (
     <Menu>
-      <MenuButton as={Button} background="#F9FAFD33">
+      <MenuButton as={Button} background="none">
         <BsThreeDotsVertical />
       </MenuButton>
       <MenuList bg="white">

@@ -1,8 +1,7 @@
-import DeleteModal from "../components/Cards/DeleteModal";
-import Frame from "../components/Frame";
+import FilmsFrame from "../components/Frames/FilmsFrame";
 
 const FramesPage = () => {
-  return <Frame />;
+  return <FilmsFrame />;
 };
 
 export default FramesPage;

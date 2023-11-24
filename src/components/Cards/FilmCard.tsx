@@ -11,9 +11,9 @@ const FilmCard = ({ title }: { title: string }) => {
         <div>
           <Image src={cardImg} borderRadius="5px" />
         </div>
-        <div className="card-footer">
-          <div className="card-info">
-            <PiFilmReel className="card-icon" />
+        <div className="card--footer">
+          <div className="card--info">
+            <PiFilmReel className="card--icon" />
             {title}
           </div>
           <CardMenu title={title} />

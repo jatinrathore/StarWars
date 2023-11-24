@@ -1,4 +1,4 @@
-.card-footer {
+.card--footer {
   display: flex;
   align-items: center;
   background: #f9fafd33;
@@ -6,13 +6,13 @@
   margin-top: 5px;
 }
 
-.card-info {
+.card--info {
   display: flex;
   align-items: center;
   flex: 1;
   padding: 10px;
 }
 
-.card-icon {
+.card--icon {
   margin-right: 10px;
 }
