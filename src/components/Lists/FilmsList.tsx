@@ -1,17 +1,20 @@
 import {
+  Box,
   Spinner,
   Table,
   TableContainer,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
 import useFilms from "../../hooks/useFilms";
 import CardMenu from "../Cards/CardMenu";
+import { ReactNode } from "react";
 
-const FilmsList = () => {
+const FilmsList = ({ children }: { children: ReactNode }) => {
   const { data, isLoading } = useFilms();
 
   return (
@@ -29,10 +32,15 @@ const FilmsList = () => {
           {isLoading && <Spinner mt={10} />}
           {data?.results.map((film, index) => (
             <Tr key={index}>
-              <Td>{film.title}</Td>
+              <Td>
+                <Box display="flex">
+                  {children}
+                  <Text ml="10px">{film.title}</Text>
+                </Box>
+              </Td>
               <Td>{film.director}</Td>
               <Td>{film.release_date}</Td>
-              <Td>
+              <Td textAlign="end">
                 <CardMenu title={film.title} />
               </Td>
             </Tr>

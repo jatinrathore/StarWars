@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 export interface Species {
   name: string;
-  homeworld: string;
+  classification: string;
   average_lifespan: string;
 }
 

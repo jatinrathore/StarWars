@@ -1,14 +1,14 @@
+import { HStack, SimpleGrid, Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import usePeoples from "../../hooks/usePeoples";
-import { Box, HStack, SimpleGrid, Text } from "@chakra-ui/react";
+import { PiPlanetBold } from "react-icons/pi";
 import FilmCard from "../Cards/FilmCard";
 import SkeletonCard from "../Cards/SkeletonCard";
-import { LuUsers2 } from "react-icons/lu";
-import PeopleList from "../Lists/PeopleList";
 import GridListSwitch from "../Switch/GridListSwitch";
+import usePlanets from "../../hooks/usePlanets";
+import PlanetList from "../Lists/planetList";
 
-const PeopleFrame = () => {
-  const { data, isLoading } = usePeoples();
+const PlanetFrame = () => {
+  const { data, isLoading } = usePlanets();
   const skeleton = [1, 2, 3, 4, 5, 6];
   const [isGridActive, setGrid] = useState(false);
 
@@ -16,7 +16,7 @@ const PeopleFrame = () => {
     <Box padding="10px">
       <HStack width="100%">
         <Text flex="1" fontSize={25} fontWeight="500">
-          People
+          Planets
         </Text>
         <GridListSwitch
           gridActive={false}
@@ -30,19 +30,19 @@ const PeopleFrame = () => {
           padding="20px 0"
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
-          {data?.results.map((people, index) => (
+          {data?.results.map((planet, index) => (
             <FilmCard
-              title={people.name}
-              children={<LuUsers2 className="card--icon" />}
+              title={planet.name}
+              children={<PiPlanetBold className="card--icon" />}
               key={index}
             />
           ))}
         </SimpleGrid>
       ) : (
-        <PeopleList children={<LuUsers2 size="20px" />} />
+        <PlanetList children={<PiPlanetBold size="20px" />} />
       )}
     </Box>
   );
 };
 
-export default PeopleFrame;
+export default PlanetFrame;

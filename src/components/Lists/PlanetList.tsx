@@ -1,4 +1,4 @@
-import usePeoples from "../../hooks/usePeoples";
+import usePlanets from "../../hooks/usePlanets";
 import {
   TableContainer,
   Table,
@@ -14,8 +14,8 @@ import {
 import CardMenu from "../Cards/CardMenu";
 import { ReactNode } from "react";
 
-const PeopleList = ({ children }: { children: ReactNode }) => {
-  const { data, isLoading } = usePeoples();
+const PlanetList = ({ children }: { children: ReactNode }) => {
+  const { data, isLoading } = usePlanets();
 
   return (
     <TableContainer mt={5}>
@@ -23,25 +23,25 @@ const PeopleList = ({ children }: { children: ReactNode }) => {
         <Thead>
           <Tr bg="#4D5875">
             <Th color="white">Name</Th>
-            <Th color="white">Birth Year</Th>
-            <Th color="white">Gender</Th>
+            <Th color="white">Climate</Th>
+            <Th color="white">Gravity</Th>
             <Th></Th>
           </Tr>
         </Thead>
         <Tbody fontSize="14px">
           {isLoading && <Spinner mt={10} />}
-          {data?.results.map((people, index) => (
+          {data?.results.map((planet, index) => (
             <Tr key={index}>
               <Td>
                 <Box display="flex">
                   {children}
-                  <Text ml="10px">{people.name}</Text>
+                  <Text ml="10px">{planet.name}</Text>
                 </Box>
               </Td>
-              <Td>{people.birth_year}</Td>
-              <Td>{people.gender}</Td>
-              <Td textAlign="end">
-                <CardMenu title={people.name} />
+              <Td>{planet.climate}</Td>
+              <Td>{planet.gravity}</Td>
+              <Td>
+                <CardMenu title={planet.name} />
               </Td>
             </Tr>
           ))}
@@ -51,4 +51,4 @@ const PeopleList = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default PeopleList;
+export default PlanetList;

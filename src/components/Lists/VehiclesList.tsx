@@ -1,4 +1,5 @@
-import usePeoples from "../../hooks/usePeoples";
+import React, { ReactNode } from "react";
+import useVehicles from "../../hooks/useVehicles";
 import {
   TableContainer,
   Table,
@@ -12,10 +13,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import CardMenu from "../Cards/CardMenu";
-import { ReactNode } from "react";
 
-const PeopleList = ({ children }: { children: ReactNode }) => {
-  const { data, isLoading } = usePeoples();
+const VehiclesList = ({ children }: { children: ReactNode }) => {
+  const { data, isLoading } = useVehicles();
 
   return (
     <TableContainer mt={5}>
@@ -23,25 +23,25 @@ const PeopleList = ({ children }: { children: ReactNode }) => {
         <Thead>
           <Tr bg="#4D5875">
             <Th color="white">Name</Th>
-            <Th color="white">Birth Year</Th>
-            <Th color="white">Gender</Th>
+            <Th color="white">Model</Th>
+            <Th color="white">Top Speed</Th>
             <Th></Th>
           </Tr>
         </Thead>
         <Tbody fontSize="14px">
           {isLoading && <Spinner mt={10} />}
-          {data?.results.map((people, index) => (
+          {data?.results.map((vehicle, index) => (
             <Tr key={index}>
               <Td>
                 <Box display="flex">
                   {children}
-                  <Text ml="10px">{people.name}</Text>
+                  <Text ml="10px">{vehicle.name}</Text>
                 </Box>
               </Td>
-              <Td>{people.birth_year}</Td>
-              <Td>{people.gender}</Td>
+              <Td>{vehicle.model}</Td>
+              <Td>{vehicle.max_atmosphering_speed}</Td>
               <Td textAlign="end">
-                <CardMenu title={people.name} />
+                <CardMenu title={vehicle.name} />
               </Td>
             </Tr>
           ))}
@@ -51,4 +51,4 @@ const PeopleList = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default PeopleList;
+export default VehiclesList;

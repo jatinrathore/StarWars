@@ -18,13 +18,13 @@ const PlanetAccordionItem = () => {
   return (
     <>
       <h2>
-        <Link to="/frame">
+        <Link to="/planets">
           <AccordionButton
             _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
           >
             <HStack as="span" flex="1" textAlign="left">
               <PiPlanetBold />
-              <Text>Planet</Text>
+              <Text>Planets</Text>
             </HStack>
             <AccordionIcon />
           </AccordionButton>

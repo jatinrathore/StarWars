@@ -39,7 +39,7 @@ const FilmsFrame = () => {
           ))}
         </SimpleGrid>
       ) : (
-        <FilmsList />
+        <FilmsList children={<PiFilmReel size="20px" />} />
       )}
     </Box>
   );

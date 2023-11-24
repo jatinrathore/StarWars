@@ -19,7 +19,7 @@ const StarShipAccordionItem = () => {
   return (
     <>
       <h2>
-        <Link to="/frame">
+        <Link to="/starships">
           <AccordionButton
             _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
           >
