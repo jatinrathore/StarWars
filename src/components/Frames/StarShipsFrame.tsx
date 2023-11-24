@@ -1,7 +1,7 @@
 import { HStack, SimpleGrid, Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { LuRocket } from "react-icons/lu";
-import FilmCard from "../Cards/FilmCard";
+import FrameCard from "../Cards/FrameCard";
 import SkeletonCard from "../Cards/SkeletonCard";
 import GridListSwitch from "../Switch/GridListSwitch";
 import useStarships from "../../hooks/useStarships";
@@ -32,7 +32,7 @@ const StarShipsFrame = () => {
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
           {data?.results.map((planet, index) => (
-            <FilmCard
+            <FrameCard
               title={planet.name}
               children={<LuRocket className="card--icon" />}
               cardImg={starshipCardImg}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import usePeoples from "../../hooks/usePeoples";
 import { Box, HStack, SimpleGrid, Text } from "@chakra-ui/react";
-import FilmCard from "../Cards/FilmCard";
+import FrameCard from "../Cards/FrameCard";
 import SkeletonCard from "../Cards/SkeletonCard";
 import { LuUsers2 } from "react-icons/lu";
 import PeopleList from "../Lists/PeopleList";
@@ -32,7 +32,7 @@ const PeopleFrame = () => {
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
           {data?.results.map((people, index) => (
-            <FilmCard
+            <FrameCard
               title={people.name}
               children={<LuUsers2 className="card--icon" />}
               cardImg={peopleCardImg}

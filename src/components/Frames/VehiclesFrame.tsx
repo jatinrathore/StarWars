@@ -1,7 +1,7 @@
 import { Box, HStack, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
-import FilmCard from "../Cards/FilmCard";
+import FrameCard from "../Cards/FrameCard";
 import SkeletonCard from "../Cards/SkeletonCard";
 import GridListSwitch from "../Switch/GridListSwitch";
 import useVehicles from "../../hooks/useVehicles";
@@ -32,7 +32,7 @@ const VehiclesFrame = () => {
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
           {data?.results.map((planet, index) => (
-            <FilmCard
+            <FrameCard
               title={planet.name}
               children={<LiaCarSideSolid className="card--icon" />}
               cardImg={vehicleCardImg}

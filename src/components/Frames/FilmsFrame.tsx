@@ -1,6 +1,6 @@
 import { Box, HStack, SimpleGrid, Text } from "@chakra-ui/react";
 import useFilms from "../../hooks/useFilms";
-import FilmCard from "../Cards/FilmCard";
+import FrameCard from "../Cards/FrameCard";
 import SkeletonCard from "../Cards/SkeletonCard";
 import { useState } from "react";
 import FilmsList from "../Lists/FilmsList";
@@ -32,7 +32,7 @@ const FilmsFrame = () => {
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
           {data?.results.map((film, index) => (
-            <FilmCard
+            <FrameCard
               title={film.title}
               children={<PiFilmReel className="card--icon" />}
               cardImg={FilmCardImg}

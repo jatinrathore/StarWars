@@ -1,7 +1,7 @@
 import { HStack, SimpleGrid, Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { PiPlanetBold } from "react-icons/pi";
-import FilmCard from "../Cards/FilmCard";
+import FrameCard from "../Cards/FrameCard";
 import SkeletonCard from "../Cards/SkeletonCard";
 import GridListSwitch from "../Switch/GridListSwitch";
 import usePlanets from "../../hooks/usePlanets";
@@ -32,7 +32,7 @@ const PlanetFrame = () => {
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
           {data?.results.map((planet, index) => (
-            <FilmCard
+            <FrameCard
               title={planet.name}
               children={<PiPlanetBold className="card--icon" />}
               cardImg={planetCardImg}

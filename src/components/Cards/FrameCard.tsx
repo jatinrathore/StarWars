@@ -1,4 +1,4 @@
-import { Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import cardImg from "../../assets/536696.jpg";
 import CardMenu from "./CardMenu";
 import "./Card.css";
@@ -9,10 +9,13 @@ interface Props {
   children: ReactNode;
   cardImg: string;
 }
-const FilmCard = ({ title, children, cardImg }: Props) => {
+const FrameCard = ({ title, children, cardImg }: Props) => {
   return (
     <>
-      <div>
+      <Box
+        _hover={{ transform: "scale(1.03)" }}
+        transition={"transform .15s ease-in"}
+      >
         <div>
           <Image src={cardImg} borderRadius="5px" />
         </div>
@@ -23,9 +26,9 @@ const FilmCard = ({ title, children, cardImg }: Props) => {
           </div>
           <CardMenu title={title} />
         </div>
-      </div>
+      </Box>
     </>
   );
 };
 
-export default FilmCard;
+export default FrameCard;
