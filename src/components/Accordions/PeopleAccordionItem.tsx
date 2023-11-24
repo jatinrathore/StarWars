@@ -18,7 +18,7 @@ const PeopleAccordionItem = () => {
   return (
     <>
       <h2>
-        <Link to="/frame">
+        <Link to="/people">
           <AccordionButton
             _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
           >

@@ -1,25 +1,25 @@
+import { useState } from "react";
+import usePeoples from "../../hooks/usePeoples";
 import { Box, HStack, SimpleGrid, Text } from "@chakra-ui/react";
-import useFilms from "../../hooks/useFilms";
 import FilmCard from "../Cards/FilmCard";
 import SkeletonCard from "../Cards/SkeletonCard";
-import { useState } from "react";
-import FilmsList from "../Lists/FilmsList";
-import { PiFilmReel } from "react-icons/pi";
+import { LuUsers2 } from "react-icons/lu";
+import PeopleList from "../Lists/PeopleList";
 import GridListSwitch from "../Switch/GridListSwitch";
 
-const FilmsFrame = () => {
-  const { data, isLoading } = useFilms();
+const PeopleFrame = () => {
+  const { data, isLoading } = usePeoples();
   const skeleton = [1, 2, 3, 4, 5, 6];
-  const [isGridActive, setGrid] = useState(true);
+  const [isGridActive, setGrid] = useState(false);
 
   return (
     <Box padding="10px">
       <HStack width="100%">
         <Text flex="1" fontSize={25} fontWeight="500">
-          Films
+          People
         </Text>
         <GridListSwitch
-          gridActive={true}
+          gridActive={false}
           onGridChange={(isGrid) => setGrid(isGrid)}
         />
       </HStack>
@@ -30,19 +30,19 @@ const FilmsFrame = () => {
           padding="20px 0"
         >
           {isLoading && skeleton.map((s, idx) => <SkeletonCard key={idx} />)}
-          {data?.results.map((film, index) => (
+          {data?.results.map((people, index) => (
             <FilmCard
-              title={film.title}
-              children={<PiFilmReel className="card--icon" />}
+              title={people.name}
+              children={<LuUsers2 className="card--icon" />}
               key={index}
             />
           ))}
         </SimpleGrid>
       ) : (
-        <FilmsList />
+        <PeopleList />
       )}
     </Box>
   );
 };
 
-export default FilmsFrame;
+export default PeopleFrame;

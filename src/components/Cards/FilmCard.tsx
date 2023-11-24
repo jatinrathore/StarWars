@@ -1,10 +1,14 @@
-import { Box, Card, CardBody, HStack, Image } from "@chakra-ui/react";
-import { PiFilmReel } from "react-icons/pi";
+import { Image } from "@chakra-ui/react";
 import cardImg from "../../assets/536696.jpg";
 import CardMenu from "./CardMenu";
-import "./FilmCard.css";
+import "./Card.css";
+import { ReactNode } from "react";
 
-const FilmCard = ({ title }: { title: string }) => {
+interface Props {
+  title: string;
+  children: ReactNode;
+}
+const FilmCard = ({ title, children }: Props) => {
   return (
     <>
       <div>
@@ -13,7 +17,7 @@ const FilmCard = ({ title }: { title: string }) => {
         </div>
         <div className="card--footer">
           <div className="card--info">
-            <PiFilmReel className="card--icon" />
+            {children}
             {title}
           </div>
           <CardMenu title={title} />

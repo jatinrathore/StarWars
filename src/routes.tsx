@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Dashboard from "./components/Dashboard";
-import FramesPage from "./pages/FramesPage";
+import FilmsFrame from "./components/Frames/FilmsFrame";
+import PeopleFrame from "./components/Frames/PeopleFrame";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/frame",
-        element: <FramesPage />,
+        path: "/films",
+        element: <FilmsFrame />,
+      },
+      {
+        path: "/people",
+        element: <PeopleFrame />,
       },
     ],
   },

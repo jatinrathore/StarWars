@@ -20,13 +20,13 @@ const FilmAccordionItem = () => {
   return (
     <>
       <h2>
-        <Link to="/frame">
+        <Link to="/films">
           <AccordionButton
             _expanded={{ borderRadius: "5px", bg: "rgba(203, 26, 128, 1)" }}
           >
             <HStack as="span" flex="1" textAlign="left">
               <PiFilmReel />
-              <Text>Film</Text>
+              <Text>Films</Text>
             </HStack>
             <AccordionIcon />
           </AccordionButton>
