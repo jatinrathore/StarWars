@@ -13,6 +13,8 @@ const useFilms = () =>
   useQuery({
     queryKey: ["films"],
     queryFn: apiClient.getAll,
+    keepPreviousData: true,
+    staleTime: 24 * 60 * 60 * 1000,
   });
 
 export default useFilms;

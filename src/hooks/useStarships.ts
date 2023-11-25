@@ -13,6 +13,8 @@ const useStarships = () =>
   useQuery({
     queryKey: ["starships"],
     queryFn: apiClient.getAll,
+    keepPreviousData: true,
+    staleTime: 24 * 60 * 60 * 1000,
   });
 
 export default useStarships;
